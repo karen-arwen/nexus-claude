@@ -1,0 +1,201 @@
+/*
+ * NEXUS · Aesthetic Modes
+ *
+ * 4 vibes que mudam densidade, tipografia, animação, decoração.
+ * Empilháveis com qualquer paleta.
+ *
+ * Aplicar via: <html data-aesthetic="elegant|gamer|default|minimal">
+ *
+ * Default = Elegant.
+ */
+
+/* ========================================
+   ☕ ELEGANT (default) — Coffee shop premium, Dark Academia
+   ======================================== */
+:root,
+[data-aesthetic='elegant'] {
+  /* Tipografia */
+  --aesthetic-font-display: 'Cormorant Garamond', Georgia, serif;
+  --aesthetic-font-sans: 'Inter', system-ui, sans-serif;
+  --aesthetic-display-tracking: -0.02em;
+  --aesthetic-display-weight: 600;
+
+  /* Densidade */
+  --aesthetic-padding-card: 1.25rem;
+  --aesthetic-radius-card: 1rem;
+  --aesthetic-radius-button: 0.5rem;
+  --aesthetic-radius-pill: 9999px;
+
+  /* Animações */
+  --aesthetic-transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --aesthetic-hover-lift: -2px;
+  --aesthetic-pulse-intensity: 0.7;
+
+  /* Decorações */
+  --aesthetic-glow-strength: 0.18;
+  --aesthetic-shadow-strength: 0.08;
+  --aesthetic-border-style: solid;
+  --aesthetic-show-decorations: 1;
+  --aesthetic-show-glow: 1;
+  --aesthetic-glass-blur: 12px;
+}
+
+/* ========================================
+   🎮 GAMER — Solo Leveling UI, neon controlado
+   ======================================== */
+[data-aesthetic='gamer'] {
+  --aesthetic-font-display: 'Orbitron', 'Rajdhani', system-ui, sans-serif;
+  --aesthetic-font-sans: 'Rajdhani', 'Inter', system-ui, sans-serif;
+  --aesthetic-display-tracking: 0.05em;
+  --aesthetic-display-weight: 700;
+
+  --aesthetic-padding-card: 1rem;
+  --aesthetic-radius-card: 0.375rem;
+  --aesthetic-radius-button: 0.25rem;
+  --aesthetic-radius-pill: 0.25rem;
+
+  --aesthetic-transition: 150ms cubic-bezier(0.16, 1, 0.3, 1);
+  --aesthetic-hover-lift: -1px;
+  --aesthetic-pulse-intensity: 1;
+
+  --aesthetic-glow-strength: 0.5;
+  --aesthetic-shadow-strength: 0.16;
+  --aesthetic-border-style: solid;
+  --aesthetic-show-decorations: 1;
+  --aesthetic-show-glow: 1;
+  --aesthetic-glass-blur: 8px;
+}
+
+[data-aesthetic='gamer'] body {
+  background-image:
+    linear-gradient(rgb(255 255 255 / 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(255 255 255 / 0.02) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+[data-aesthetic='gamer'] .card-premium {
+  border-width: 1px;
+  position: relative;
+}
+
+[data-aesthetic='gamer'] .card-premium::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(
+    135deg,
+    transparent,
+    var(--primary),
+    transparent
+  );
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  opacity: 0.4;
+}
+
+/* ========================================
+   📐 DEFAULT — Notion-like, productivity-first
+   ======================================== */
+[data-aesthetic='default'] {
+  --aesthetic-font-display: 'Inter', system-ui, sans-serif;
+  --aesthetic-font-sans: 'Inter', system-ui, sans-serif;
+  --aesthetic-display-tracking: -0.01em;
+  --aesthetic-display-weight: 600;
+
+  --aesthetic-padding-card: 1rem;
+  --aesthetic-radius-card: 0.5rem;
+  --aesthetic-radius-button: 0.375rem;
+  --aesthetic-radius-pill: 0.375rem;
+
+  --aesthetic-transition: 120ms ease-out;
+  --aesthetic-hover-lift: 0px;
+  --aesthetic-pulse-intensity: 0;
+
+  --aesthetic-glow-strength: 0;
+  --aesthetic-shadow-strength: 0.05;
+  --aesthetic-border-style: solid;
+  --aesthetic-show-decorations: 0;
+  --aesthetic-show-glow: 0;
+  --aesthetic-glass-blur: 6px;
+}
+
+[data-aesthetic='default'] .animate-float,
+[data-aesthetic='default'] .animate-pulse-soft,
+[data-aesthetic='default'] .animate-glow {
+  animation: none;
+}
+
+/* ========================================
+   🤍 MINIMAL — Apple Notes, Bear, calm computing
+   ======================================== */
+[data-aesthetic='minimal'] {
+  --aesthetic-font-display: 'Inter', system-ui, sans-serif;
+  --aesthetic-font-sans: 'Inter', system-ui, sans-serif;
+  --aesthetic-display-tracking: -0.02em;
+  --aesthetic-display-weight: 500;
+
+  --aesthetic-padding-card: 1.5rem;
+  --aesthetic-radius-card: 0.875rem;
+  --aesthetic-radius-button: 0.625rem;
+  --aesthetic-radius-pill: 9999px;
+
+  --aesthetic-transition: 200ms ease-out;
+  --aesthetic-hover-lift: 0px;
+  --aesthetic-pulse-intensity: 0;
+
+  --aesthetic-glow-strength: 0;
+  --aesthetic-shadow-strength: 0.04;
+  --aesthetic-border-style: solid;
+  --aesthetic-show-decorations: 0;
+  --aesthetic-show-glow: 0;
+  --aesthetic-glass-blur: 0px;
+}
+
+[data-aesthetic='minimal'] .animate-float,
+[data-aesthetic='minimal'] .animate-pulse-soft,
+[data-aesthetic='minimal'] .animate-glow,
+[data-aesthetic='minimal'] .animate-shimmer {
+  animation: none;
+}
+
+[data-aesthetic='minimal'] .gradient-rose,
+[data-aesthetic='minimal'] .gradient-burgundy,
+[data-aesthetic='minimal'] .gradient-sunset,
+[data-aesthetic='minimal'] .gradient-ascend {
+  background: var(--bg-elevated) !important;
+  color: var(--text-primary) !important;
+}
+
+[data-aesthetic='minimal'] .text-gradient-rose,
+[data-aesthetic='minimal'] .text-gradient-ascend {
+  -webkit-text-fill-color: var(--text-primary);
+  background: none;
+}
+
+/* ========================================
+   APLICAÇÃO GLOBAL — components reagem aos aesthetic vars
+   ======================================== */
+.card-premium {
+  border-radius: var(--aesthetic-radius-card);
+  padding: 0;
+  transition: all var(--aesthetic-transition);
+}
+
+.card-premium:hover {
+  transform: translateY(var(--aesthetic-hover-lift));
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--aesthetic-font-display);
+  letter-spacing: var(--aesthetic-display-tracking);
+  font-weight: var(--aesthetic-display-weight);
+}
